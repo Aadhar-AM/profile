@@ -93,7 +93,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    
+    background-position: center;
+}
+@media screen and(max-width:800px) {
+    .home{
+        background-position-x: center;
+    }
 }
 .home p{
     font-family: 'Quicksand', sans-serif;
