@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,15 +24,14 @@
         <a href="#myphotos"><i class="fa fa-eye"></i>GALLERY</a>
         <a href="#contact"><i class="fa fa-envelope"></i>CONTACT</a>
     </div>
-    <div class="hamburger" >
+    <div class="hamburger">
         <i class="fa fa-bars" id="hamburger"></i>
-        <div class="topnavbar" id="topnavbar">
-            <div class="close"><i class="fa fa-window-close" id="close" style="color: white;"></i></div>
-            <a href="#home" class="dismiss">HOME</a>
-            <a href="#about" class="dismiss">ABOUT</a>
-            <a href="#myphotos" class="dismiss">GALLERY</a>
-            <a href="#contact" class="dismiss">CONTACT</a>
-        </div>
+    </div>
+    <div class="topnavbar" id="topnavbar" style="height: 0vh; font-size: 0px;">
+        <a href="#home" class="dismiss"><i class="fa fa-home">HOME</i></a>
+        <a href="#about" class="dismiss"><i class="fa fa-user">ABOUT</i></a>
+        <a href="#myphotos" class="dismiss"><i class="fa fa-eye">GALLERY</i></a>
+        <a href="#contact" class="dismiss"><i class="fa fa-envelope">CONTACT</i></a>
     </div>
     <div class="sidebar" id="sidebar">
         <div class="home" id="home">
@@ -49,19 +51,19 @@
             </div>
             <div class="myskills">
                 <p>My Skills</p>
-                <p style="margin: 20px 0px; font-size: 24px; color: grey; padding-top:20px ;">WEB DEVELOPMENT</p>
+                <p style="margin: 20px 0px; font-size: 24px; color: grey; padding-top:20px ;"><i class="fa fa-code" style="margin-right: 10px;"></i>WEB DEVELOPMENT</p>
                 <div style="background-color: white; width: 100%; height: 24px;">
                     <div style="background-color: grey; width:50%; height: 24px;"></div>
                 </div>
-                <p style="margin: 20px 0px; font-size: 24px; color: grey; padding-top:20px ;">PHOTOSHOP</p>
+                <p style="margin: 20px 0px; font-size: 24px; color: grey; padding-top:20px ;"><i class="fa fa-camera" style="margin-right: 10px;"></i>PHOTOSHOP</p>
                 <div style="background-color: white; width: 100%; height: 24px;">
                     <div style="background-color: grey; width:80%; height: 24px;"></div>
                 </div>
-                <p style="margin: 20px 0px; font-size: 24px; color: grey; padding-top:20px ;">VIDEO EDITOR</p>
+                <p style="margin: 20px 0px; font-size: 24px; color: grey; padding-top:20px ;"><i class="fa fa-film" style="margin-right: 10px;"></i>VIDEO EDITOR</p>
                 <div style="background-color: white; width: 100%; height: 24px;">
                     <div style="background-color: grey; width:75%; height: 24px;"></div>
                 </div>
-                <p style="margin: 20px 0px; font-size: 24px; color: grey; padding-top:20px ;">CODER</p>
+                <p style="margin: 20px 0px; font-size: 24px; color: grey; padding-top:20px ;"><i class="fa fa-code"style="margin-right: 10px;" ></i>CODER</p>
                 <div style="background-color: white; width: 100%; height: 24px;">
                     <div style="background-color: grey; width:10%; height: 24px; "></div>
                 </div>
@@ -121,21 +123,29 @@
         let icon = document.getElementById("hamburger");
         let menu = document.getElementById("topnavbar");
         icon.addEventListener("click",function(){
-            menu.style.display="flex";
-            icon.style.display="none";
+            if(menu.style.height==="0vh"){
+            menu.style.height="100vh";
+            menu.style.fontSize="30px";
+        }
+            else{
+            menu.style.height="0vh";
+            menu.style.fontSize="0px";
+        }
         });
-        let close = document.getElementById("close");
-        close.addEventListener("click",function(){
-            menu.style.display="none";
-            icon.style.display="block";
-        });
-        let dismiss = document.getElementsByClassName("dismiss");
-        for(let i =0;i<dismiss.length;i++){
-        dismiss[i].addEventListener("click",function(){
-            menu.style.display="none";
-            icon.style.display="block";
-        });
-    }
+        let close = document.getElementsByClassName("dismiss");
+        
+        for (let index = 0; index < close.length; index++) {
+            close[index].addEventListener("click",function(){
+                if(menu.style.height="100vh")
+                {
+                    menu.style.height="0vh";
+                    menu.style.fontSize="0px";
+                }
+            })
+            
+        }
+        
+    
         
     </script>
 </body>
