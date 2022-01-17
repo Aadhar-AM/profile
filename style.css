@@ -84,8 +84,6 @@
     }
     .hamburger{
         display: block;
-        position: fixed;
-        top: 0px;
         width: 100vw;
         height: 50px;
     }
@@ -310,9 +308,12 @@
 .footer a{
     text-decoration: none;
     color: white;
-    font-size: 24px;
+    font-size: 30px;
     margin: 20px;
 }
 .footer a:hover{
     color: grey;
+}
+.copyright:hover{
+color: grey;
 }
